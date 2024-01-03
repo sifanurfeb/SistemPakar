@@ -1,0 +1,22 @@
+.kotak{
+    height: 50%;
+}
+.login{
+    background-color: rgb(175, 222, 222);
+    padding: 10px 10px;
+    height: 50vh;
+    margin: 50px 0;
+    width: 550px;
+    display: flex;
+    justify-content: center;
+    align-items: start;
+    flex-wrap: nowrap;
+    flex-direction: column;
+    border-radius: 20px;
+}
+.login input{
+    width: 100%;
+}
+.header{
+    background-image: url("https://png.pngtree.com/thumb_back/fw800/background/20220427/pngtree-sexually-transmitted-infection-banner-human-image_1091972.jpg");
+}
