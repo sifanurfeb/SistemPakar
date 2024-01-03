@@ -12,7 +12,7 @@
 <div class="container">
     <div class="bg-light-subtle">
         <div class="d-flex align-items-center justify-content-center flex-column mt-5">
-            <h1 class="text-uppercase fw-semibold mb-3">Selamat Datang</h1>
+            <h1 class="text-uppercase fw-semibold mb-3">Selamat Datang!</h1>
             <h3 class="text-uppercase fw-bold">Sistem Pakar PENYAKIT MENULAR SEKSUAL PADA MANUSIA</h3>
             <div class="login">
                 <label for="name" class="text-black">Username</label><br>
