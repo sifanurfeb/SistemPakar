@@ -39,5 +39,40 @@
         <script src="assets/demo/chart-bar-demo.js"></script>
         <script src="https://cdn.jsdelivr.net/npm/simple-datatables@latest" crossorigin="anonymous"></script>
         <script src="js/datatables-simple-demo.js"></script>
+        <script src="js/jquery-3.6.0.js"></script>
+
+        <script type="text/javascript">
+            $('#editModalGejala').on('show.bs.modal', function(event) {
+                let button = $(event.relatedTarget);
+
+                let id = button.data('id');
+                let kode = button.data('kode');
+                let gejala = button.data('gejala');
+                let probab = button.data('probab');
+
+                let input = $(this);
+
+                input.find('#id').val(id);
+                input.find('#kode').val(kode);
+                input.find('#gejala').val(gejala);
+                input.find('#probab').val(probab);
+            });
+
+            $('#editModalPenyakit').on('show.bs.modal', function(event) {
+                let button = $(event.relatedTarget);
+
+                let id = button.data('id');
+                let kode = button.data('kode');
+                let penyakit = button.data('penyakit');
+
+                let input = $(this);
+
+                input.find('#id').val(id);
+                input.find('#kode').val(kode);
+                input.find('#penyakit').val(penyakit);
+            });
+
+
+        </script>
     </body>
 </html>

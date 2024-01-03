@@ -46,8 +46,13 @@
                             <td><?= $penyakit['kode_penyakit']; ?></td>
                             <td><?= $penyakit['nama_penyakit']; ?></td>
                             <td>
-                                <button class="btn btn-primary rounded-0 btn-sm">Edit</button>
-                                <button class="btn btn-primary rounded-0 btn-sm">Hapus</button>
+                                <button class="btn btn-primary rounded-0 btn-sm" 
+                                data-bs-toggle="modal" 
+                                data-bs-target="#editModalPenyakit"
+                                data-id="<?= $penyakit['id_penyakit']; ?>"
+                                data-kode="<?= $penyakit['kode_penyakit']; ?>"
+                                data-penyakit="<?= $penyakit['nama_penyakit']; ?>">Edit</button>
+                                <a href="fungsi_proses/proses_hapus_penyakit.php?id_penyakit=<?= $penyakit['id_penyakit']; ?>" class="btn btn-primary rounded-0 btn-sm" onclick="return confirm('Ingin menghapusnya?');">Hapus</a>
                             </td>
                         </tr>
                     <?php endwhile;  ?>
@@ -56,7 +61,7 @@
         </div>
     </div>
 
-    <!-- Modal -->
+    <!-- Modal tambah -->
     <div class="modal fade" id="exampleModal" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
       <div class="modal-dialog">
         <div class="modal-content">
@@ -72,7 +77,36 @@
                   </div>
                   <div class="mb-3">
                     <label for="exampleInputPassword1" class="form-label">Nama Penyakit</label>
-                    <input type="text=" class="form-control" id="exampleInputPassword1" name="nama_penyakit">
+                    <input type="text=" class="form-control" id="exampleInputPassword1" name="nama_penyakit" required>
+                  </div>
+              </div>
+              <div class="modal-footer">
+                <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Kembali</button>
+                <button type="submit" class="btn btn-primary">Simpan</button>
+              </div>
+            </form>
+        </div>
+      </div>
+    </div>
+
+    <!-- Modal edit -->
+    <div class="modal fade" id="editModalPenyakit" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
+      <div class="modal-dialog">
+        <div class="modal-content">
+          <div class="modal-header">
+            <h1 class="modal-title fs-5" id="exampleModalLabel">Edit Data Penyakit</h1>
+            <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+          </div>
+          <form method="post" action="fungsi_proses/proses_edit_penyakit.php">
+              <div class="modal-body">
+                  <input type="text" class="form-control" id="id" name="id" hidden>
+                  <div class="mb-3">
+                    <label for="kode" class="form-label">Kode Penyakit</label>
+                    <input type="text" class="form-control" id="kode" name="kode" readonly="readonly">
+                  </div>
+                  <div class="mb-3">
+                    <label for="penyakit" class="form-label">Nama Penyakit</label>
+                    <input type="text=" class="form-control" id="penyakit" name="nama_penyakit" required>
                   </div>
               </div>
               <div class="modal-footer">
