@@ -47,6 +47,7 @@
    <section class="gejala align-items-center justify-content-center">
     <div class="container">
         <h3 class="text-center">Data Gejala</h3>
+        <form action="">
         <label for="sick" class="mb-4">Data penyakit</label>
         <select class=" select form-select" aria-label="Default select example">
             <option selected>Silahkan Pilih</option>
@@ -56,6 +57,7 @@
             <option value="4"><?php  ?></option>
             <option value="5"><?php  ?></option>
 </select>
+        </form>
 <button class="btn" type="submit">Submit</button>
 <a href="pil_penyakit.php" class="btn">Isi Pilihan Penyakit</a>
     </div>
