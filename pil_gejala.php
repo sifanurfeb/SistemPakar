@@ -24,10 +24,10 @@
           <a class="nav-link active" aria-current="page" href="home.php">Home</a>
         </li>
         <li class="nav-item">
-          <a class="nav-link" href="halaman/pil_penyakit.php">Data Penyakit</a>
+          <a class="nav-link" href="pil_penyakit.php">Data Penyakit</a>
         </li>
         <li class="nav-item">
-          <a class="nav-link" href="data_diagnosa.php">Data Gejala</a>
+          <a class="nav-link" href="pil_gejala.php">Data Gejala</a>
         </li>
         <li class="nav-item">
           <a class="nav-link" href="#">Diagnosa</a>
@@ -42,13 +42,22 @@
     <!-- navbar end -->
 
     <!-- header  -->
-    <section class="header align-items-center justify-content-center">
-        <div class="container">
-            <h1 class="display-1">Sistem Pakar</h1>
-            <h4>Sistem pakar adalah sistem informasi yang berisi pengetahuan seorang pakar sehingga dapat digunakan untuk konsultasi </h4>
-        </div>
-    </section>
+   <section class="penyakit align-items-center justify-content-center m-5">
+    <div class="container">
+        <h3 class="text-center">Data Gejala</h3>
+        <label for="sick" class="mb-2">Data penyakit</label>
+        <select class="form-select" aria-label="Default select example">
+            <option selected>Silahkan Pilih</option>
+            <option value="1"><?php  ?></option>
+            <option value="2"><?php  ?></option>
+            <option value="3"><?php  ?></option>
+            <option value="4"><?php  ?></option>
+            <option value="5"><?php  ?></option>
+</select>
+<button class="btn btn-info my-3 text-light" type="submit">Submit</button>
+    </div>
+   </section>
     <!-- header  end -->
    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/js/bootstrap.bundle.min.js" integrity="sha384-C6RzsynM9kWDrMNeT87bh95OGNyZPhcTNXj1NW7RuBCsyN/o0jlpcV8Qyq46cDfL" crossorigin="anonymous"></script>
   </body>
-</html>
+</html> 
