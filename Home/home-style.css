@@ -1,22 +1,63 @@
   @import url('https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;700&display=swap');
-
   body{
     font-family: 'Poppins';
   }
+
+  .kotak{
+    height: 50%;
+}
+.login{
+    background-color: rgb(175, 222, 222);
+    padding: 10px 10px;
+    height: 50vh;
+    margin: 50px 0;
+    width: 550px;
+    display: flex;
+    justify-content: center;
+    align-items: start;
+    flex-wrap: nowrap;
+    flex-direction: column;
+    border-radius: 20px;
+}
+.login input{
+    width: 100%;
+}
+  
 .first{
     background-image: url('bg.jpg');
     background-position:center;
+    background-repeat: no-repeat;
+    background-size: cover;
+    height: 100vh;
     color: #fff;
-    padding: 10px 0;
+    padding: 50px 0;
 }
 h1{
     text-align: center;
     font-weight: 700;
     padding: 20px 0;
 }
-h6{
+h6, h5{
     
     font-weight: 300;
     text-align: justify;
     padding: 10px 0;
+}
+.btn{
+  width: 300px;
+  background-color: #CDB0EB;
+  font-weight: 700;
+  color: #fff;
+  box-shadow: 10px 15px 14px 3px rgba(191,151,151,0.77);
+-webkit-box-shadow: 10px 15px 14px 3px rgba(191,151,151,0.77);
+-moz-box-shadow: 10px 15px 14px 3px rgba(191,151,151,0.77);
+margin: 10px 450px;
+cursor: pointer;
+-webkit-transition-duration: 0.5s;
+transition: 0.5s;
+}
+.btn:hover, .btn:focus, .btn-active{
+  box-shadow: 0 0 20px rgba(0, 0, 0, 0.5);
+  -webkit-transform: scale(1.1);
+  transform: scale(1.1);
 }
