@@ -18,5 +18,8 @@
     width: 100%;
 }
 .header{
-    background-image: url("https://png.pngtree.com/thumb_back/fw800/background/20220427/pngtree-sexually-transmitted-infection-banner-human-image_1091972.jpg");
+    background-image: url('/assets/img/bg.jpg');
+}
+h4{
+    color: #fff;
 }
