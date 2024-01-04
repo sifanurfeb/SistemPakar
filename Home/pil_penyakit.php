@@ -7,11 +7,12 @@
     <meta name="viewport" content="width=device-width, initial-scale=1">
     <title>Bootstrap demo</title>
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-T3c6CoIi6uLrA9TneNEoa7RxnatzjcDSCmG1MXxSR1GAsXEV/Dwwykc2MPK8M2HN" crossorigin="anonymous">
-    <link rel="stylesheet" href="../home-style.css">
+    <link rel="stylesheet" href="home-style.css">
 
   </head>
   <body>
     <!-- navbar -->
+    <div class="fixed-top">
     <nav class="navbar navbar-expand-lg bg-body-tertiary">
   <div class="container">
     <a class="navbar-brand" href="#">Sistem Pakar</a>
@@ -24,10 +25,10 @@
           <a class="nav-link active" aria-current="page" href="home.php">Home</a>
         </li>
         <li class="nav-item">
-          <a class="nav-link" href="pil_penyakit.php">Data Penyakit</a>
+          <a class="nav-link" href="pil_gejala.php">Data Gejala</a>
         </li>
         <li class="nav-item">
-          <a class="nav-link" href="pil_gejala.php">Data Gejala</a>
+          <a class="nav-link" href="pil_penyakit.php">Data Penyakit</a>
         </li>
         <li class="nav-item">
           <a class="nav-link" href="#">Diagnosa</a>
@@ -38,15 +39,16 @@
       </ul>
     </div>
   </div>
+  </div>
 </nav>
     <!-- navbar end -->
 
     <!-- header  -->
-   <section class="penyakit align-items-center justify-content-center m-5">
+   <section class="penyakit align-items-center justify-content-center">
     <div class="container">
         <h3 class="text-center">Data Penyakit</h3>
-        <label for="sick" class="mb-2">Data penyakit</label>
-        <select class="form-select" aria-label="Default select example">
+        <label for="sick" class="mb-4">Data penyakit</label>
+        <select class=" select form-select" aria-label="Default select example">
             <option selected>Silahkan Pilih</option>
             <option value="1"><?php  ?></option>
             <option value="2"><?php  ?></option>
@@ -54,7 +56,9 @@
             <option value="4"><?php  ?></option>
             <option value="5"><?php  ?></option>
 </select>
-<button class="btn btn-info my-3 text-light" type="submit">Submit</button>
+<button class="btn" type="submit">Submit</button>
+
+
     </div>
    </section>
     <!-- header  end -->
