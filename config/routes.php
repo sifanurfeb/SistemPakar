@@ -9,6 +9,12 @@
 		} 
 		else if ($_GET['halaman'] == 'data_gejala') {
 			require 'halaman/data_gejala.php';
+		} 
+		else if ($_GET['halaman'] == 'pengetahuan') {
+			require 'halaman/basis_pengetahuan.php';
+		}
+		else if ($_GET['halaman'] == 'tambah_basis') {
+			require 'halaman/tambah_basis_pengetahuan.php';
 		}
 	} 
 	else {

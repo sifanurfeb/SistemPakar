@@ -11,7 +11,7 @@
                 <nav class="sb-sidenav-menu-nested nav">
                     <a class="nav-link" href="index.php?halaman=data_penyakit">Data Penyakit</a>
                     <a class="nav-link" href="index.php?halaman=data_gejala">Data Gejala</a>
-                    <a class="nav-link" href="#">Basis Pengetahuan</a>
+                    <a class="nav-link" href="index.php?halaman=pengetahuan">Basis Pengetahuan</a>
                 </nav>
                 
             </div>
