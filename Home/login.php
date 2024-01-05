@@ -15,13 +15,13 @@
             <h1 class="text-uppercase fw-semibold mb-3">Selamat Datang!</h1>
             <h3 class="text-uppercase fw-bold">Sistem Pakar PENYAKIT MENULAR SEKSUAL PADA MANUSIA</h3>
             <div class="login">
-                <form action="" method="post">
+                <form action="home.php" method="post">
                 <label for="name" class="text-black">Username</label><br>
                 <input type="text" name="name" id="name" placeholder="Silahkan Masukan Username">
                 <br>
                 <label for="pass">Password</label><br>
                 <input type="password" name="pass" id="pass" placeholder="Silahkan Masukan Password">
-                <button class="btn btn-primary mt-5"type="submit" name="submit">Submit</button>
+                <button class="button  mt-5"type="submit" name="submit">Submit</button>
             </div>
         </div>
     </div>
