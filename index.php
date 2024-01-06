@@ -72,6 +72,24 @@
                 input.find('#penyakit').val(penyakit);
             });
 
+            $('#editBasis').on('show.bs.modal', function(event) {
+                let button = $(event.relatedTarget);
+
+                let id = button.data('id');
+                let kode = button.data('kode');
+                let penyakit = button.data('penyakit');
+                let gejala = button.data('gejala');
+                let pertanyaan = button.data('pertanyaan');
+
+                let input = $(this);
+
+                input.find('#id').val(id);
+                input.find('#kode').val(kode);
+                input.find('#penyakit').val(penyakit);
+                input.find('#gejala').val(gejala);
+                input.find('#pertanyaan').val(pertanyaan);
+            });
+
 
         </script>
     </body>

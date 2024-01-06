@@ -32,11 +32,11 @@
               <a class="nav-link" href="home.php?halaman=penyakit">Data Penyakit</a>
             </li>
             <li class="nav-item">
-              <a class="nav-link" href="#">Diagnosa</a>
+              <a class="nav-link" href="home.php?halaman=diagnosa">Diagnosa</a>
             </li>
-            <li class="nav-item">
+            <!-- <li class="nav-item">
               <a class="nav-link" href="#">Kesimpulan</a>
-            </li>
+            </li> -->
           </ul>
         </div>
       </div>
@@ -48,19 +48,6 @@
 
   <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/js/bootstrap.bundle.min.js" integrity="sha384-C6RzsynM9kWDrMNeT87bh95OGNyZPhcTNXj1NW7RuBCsyN/o0jlpcV8Qyq46cDfL" crossorigin="anonymous"></script>
   <script src="../js/jquery-3.6.0.js"></script>
-
-  <script type="text/javascript">
-    // $('#tabel_diagnosis').hide();
-
-    // $('#submit').on('click', function(event) {
-    //   let select = $('#nama_penyakit').val();
-    //   let penyakit = $(event.relatedTarget).data('penyakit');
-    //   if (select === penyakit) {
-    //     $('#tabel_diagnosis').show();
-    //   }    
-
-    // });
-  </script>
   
   </body>
 </html>

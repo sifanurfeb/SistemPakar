@@ -1,14 +1,17 @@
 <?php  
 	require '../config/koneksi.php';
 
-	$penyakit = $_POST['penyakit'];
+	$id = $_POST['id'];
 	$kode = $_POST['kode'];
+	$penyakit = $_POST['penyakit'];
 	$gejala = $_POST['gejala'];
 	$pertanyaan = $_POST['pertanyaan'];
+
+	$sql = "UPDATE data_rule SET kode_rule = '$kode', id_penyakit = '$penyakit', id_gejala = '$gejala', 
+	pertanyaan = '$pertanyaan' WHERE id_rule = '$id'";
 	
-	$sql = "INSERT INTO data_rule VALUES ('', '$kode', '$penyakit', '$gejala', '$pertanyaan')";
 	mysqli_query($koneksi, $sql);
-	
+
 	header('Location: ../index.php?halaman=pengetahuan');
 
 ?>

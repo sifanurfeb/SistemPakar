@@ -3,7 +3,7 @@
 -- https://www.phpmyadmin.net/
 --
 -- Host: 127.0.0.1
--- Waktu pembuatan: 05 Jan 2024 pada 03.32
+-- Waktu pembuatan: 06 Jan 2024 pada 05.49
 -- Versi server: 10.4.17-MariaDB
 -- Versi PHP: 7.4.13
 
@@ -93,6 +93,19 @@ INSERT INTO `data_gejala` (`id_gejala`, `kode_gejala`, `gejala`, `probabilitas`)
 -- --------------------------------------------------------
 
 --
+-- Struktur dari tabel `data_hasil`
+--
+
+CREATE TABLE `data_hasil` (
+  `id_hasil` int(20) NOT NULL,
+  `penyakit` varchar(100) NOT NULL,
+  `id_gejala` int(20) NOT NULL,
+  `kondisi` varchar(50) NOT NULL
+) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4;
+
+-- --------------------------------------------------------
+
+--
 -- Struktur dari tabel `data_penyakit`
 --
 
@@ -114,6 +127,45 @@ INSERT INTO `data_penyakit` (`id_penyakit`, `kode_penyakit`, `nama_penyakit`) VA
 (6, 'P05', 'Genital Warts'),
 (7, 'P06', 'Hepatitis B');
 
+-- --------------------------------------------------------
+
+--
+-- Struktur dari tabel `data_rule`
+--
+
+CREATE TABLE `data_rule` (
+  `id_rule` int(20) NOT NULL,
+  `kode_rule` varchar(100) NOT NULL,
+  `id_penyakit` int(20) NOT NULL,
+  `id_gejala` int(20) NOT NULL,
+  `pertanyaan` varchar(1000) NOT NULL
+) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4;
+
+--
+-- Dumping data untuk tabel `data_rule`
+--
+
+INSERT INTO `data_rule` (`id_rule`, `kode_rule`, `id_penyakit`, `id_gejala`, `pertanyaan`) VALUES
+(1, 'R001', 1, 3, 'Apakah mengalami benjolan yang akan pecah?'),
+(2, 'R002', 1, 4, 'Apakah terdapat luka menganga yang perih dan panas?'),
+(3, 'R003', 1, 5, 'Apakah luka semakin melebar?'),
+(4, 'R004', 1, 9, 'Apakah terdapat infeksi virus HSV?'),
+(5, 'R005', 3, 12, 'Apakah dapat sembuh tanpa diobati?'),
+(6, 'R006', 3, 14, 'Apakah gejala tersebut hilang?'),
+(7, 'R007', 3, 15, 'Apakah penyakit ini dapat menyerang syarah otak, jantung dan pembuluh darah setelah 5 tahun?'),
+(8, 'R008', 4, 18, 'Apakah mengeluarkan nanah dari penis?'),
+(9, 'R009', 4, 21, 'Apakah keluar sedikit nanah pada pagi hari saja?'),
+(10, 'R010', 4, 24, 'Apakah terjadi peradangan karena belum diobati?'),
+(11, 'R001', 4, 25, 'Apakah sering berkemih?'),
+(12, 'R001', 4, 26, 'Apakah lubang penis tampak merah dan bengkak?'),
+(13, 'R001', 5, 17, 'Apakah merasakan nyeri saat berkemih?'),
+(14, 'R001', 5, 19, 'Apakah merasa sakit saat buang air kecil?'),
+(15, 'R001', 6, 28, 'Apakah terdapat benjolan kecil seperti kutil?'),
+(16, 'R001', 6, 29, 'Apakah merasa gatal pada kutil tersebut serta ujung batang penis?'),
+(17, 'R001', 7, 33, 'Apakah mengalami nafsu makan hilang?'),
+(18, 'R001', 7, 36, 'Apakah merasakan lelah berlebihan?'),
+(19, 'R001', 7, 37, 'Apakah merasakan diare?');
+
 --
 -- Indexes for dumped tables
 --
@@ -131,10 +183,25 @@ ALTER TABLE `data_gejala`
   ADD PRIMARY KEY (`id_gejala`);
 
 --
+-- Indeks untuk tabel `data_hasil`
+--
+ALTER TABLE `data_hasil`
+  ADD PRIMARY KEY (`id_hasil`),
+  ADD KEY `id_gejala` (`id_gejala`);
+
+--
 -- Indeks untuk tabel `data_penyakit`
 --
 ALTER TABLE `data_penyakit`
   ADD PRIMARY KEY (`id_penyakit`);
+
+--
+-- Indeks untuk tabel `data_rule`
+--
+ALTER TABLE `data_rule`
+  ADD PRIMARY KEY (`id_rule`),
+  ADD KEY `id_penyakit` (`id_penyakit`,`id_gejala`),
+  ADD KEY `id_gejala` (`id_gejala`);
 
 --
 -- AUTO_INCREMENT untuk tabel yang dibuang
@@ -153,10 +220,39 @@ ALTER TABLE `data_gejala`
   MODIFY `id_gejala` int(20) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=38;
 
 --
+-- AUTO_INCREMENT untuk tabel `data_hasil`
+--
+ALTER TABLE `data_hasil`
+  MODIFY `id_hasil` int(20) NOT NULL AUTO_INCREMENT;
+
+--
 -- AUTO_INCREMENT untuk tabel `data_penyakit`
 --
 ALTER TABLE `data_penyakit`
   MODIFY `id_penyakit` int(20) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=8;
+
+--
+-- AUTO_INCREMENT untuk tabel `data_rule`
+--
+ALTER TABLE `data_rule`
+  MODIFY `id_rule` int(20) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=22;
+
+--
+-- Ketidakleluasaan untuk tabel pelimpahan (Dumped Tables)
+--
+
+--
+-- Ketidakleluasaan untuk tabel `data_hasil`
+--
+ALTER TABLE `data_hasil`
+  ADD CONSTRAINT `data_hasil_ibfk_1` FOREIGN KEY (`id_gejala`) REFERENCES `data_rule` (`id_gejala`) ON DELETE CASCADE ON UPDATE CASCADE;
+
+--
+-- Ketidakleluasaan untuk tabel `data_rule`
+--
+ALTER TABLE `data_rule`
+  ADD CONSTRAINT `data_rule_ibfk_1` FOREIGN KEY (`id_gejala`) REFERENCES `data_gejala` (`id_gejala`) ON DELETE CASCADE ON UPDATE CASCADE,
+  ADD CONSTRAINT `data_rule_ibfk_2` FOREIGN KEY (`id_penyakit`) REFERENCES `data_penyakit` (`id_penyakit`) ON DELETE CASCADE ON UPDATE CASCADE;
 COMMIT;
 
 /*!40101 SET CHARACTER_SET_CLIENT=@OLD_CHARACTER_SET_CLIENT */;

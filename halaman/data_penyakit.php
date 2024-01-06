@@ -9,11 +9,11 @@
     $data = mysqli_fetch_array($query);
     $kode = $data['kode'];
 
-    $urutan = (int) substr($kode, 2, 2);
+    $urutan = (int) substr($kode, 3, 3);
     $urutan++;
 
     $huruf = "P";
-    $kodepenyakit = $huruf . sprintf("%02s", $urutan);
+    $kodepenyakit = $huruf . sprintf("%03s", $urutan);
 ?>
 
 <div class="container-fluid px-4">

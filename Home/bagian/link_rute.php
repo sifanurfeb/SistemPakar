@@ -10,9 +10,12 @@
 		else if ($_GET['halaman'] == 'penyakit') {
 			require 'bagian/pil_penyakit.php';
 		} 
+		else if ($_GET['halaman'] == 'diagnosa') {
+			require 'bagian/hasil_diagnosis.php';
+		} 
 	} 
 	else {
 		require 'bagian/hal_utama.php';
 	}
-
+	
 ?>

@@ -68,8 +68,16 @@
                             <td><?= $data['gejala']; ?></td>
                             <td><?= $data['pertanyaan']; ?></td>
                             <td nowrap="nowrap">
-                                <button type="button" class="btn btn-primary btn-sm rounded-0">Edit</button>
-                                <button type="button" class="btn btn-primary btn-sm rounded-0">Hapus</button>
+                                <button type="button" class="btn btn-primary btn-sm rounded-0" 
+                                data-bs-toggle="modal" 
+                                data-bs-target="#editBasis"
+                                data-id="<?= $data['id_rule']; ?>"
+                                data-kode="<?= $data['kode_rule']; ?>"
+                                data-penyakit="<?= $data['id_penyakit']; ?>"
+                                data-gejala="<?= $data['id_gejala']; ?>"
+                                data-pertanyaan="<?= $data['pertanyaan']; ?>"
+                                >Edit</button>
+                                <a href="fungsi_proses/proses_hapus_pengetahuan.php?id_rule=<?= $data['id_rule']; ?>" class="btn btn-primary rounded-0 btn-sm" onclick="return confirm('Ingin menghapusnya?');">Hapus</a>
                             </td>
                         </tr>
                     <?php endforeach; ?>
@@ -95,8 +103,8 @@
                   </div>
                   <div class="mb-3">
                     <label for="exampleInputPassword1" class="form-label">Gejala</label>
-                    <select class="form-select" aria-label="Default select example" name="gejala">
-                      <option selected>-- Pilih Gejala --</option>
+                    <select class="form-select" aria-label="Default select example" name="gejala" required>
+                      <option selected value="">-- Pilih Gejala --</option>
                       <?php foreach ($row as $data) : ?>
                         <option value="<?= $data['id_gejala']; ?>"><?= $data['kode_gejala']; ?> - <?= $data['gejala']; ?></option>
                       <?php endforeach; ?>
@@ -104,7 +112,45 @@
                   </div>
                   <div class="mb-3">
                     <label for="exampleInputPassword1" class="form-label">Pertanyaan</label>
-                    <textarea class="form-control" id="exampleFormControlTextarea1" rows="3" name="pertanyaan"></textarea>
+                    <textarea class="form-control" id="exampleFormControlTextarea1" rows="3" name="pertanyaan" required></textarea>
+                  </div>
+              </div>
+              <div class="modal-footer">
+                <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Kembali</button>
+                <button type="submit" class="btn btn-primary">Simpan</button>
+              </div>
+          </form>
+        </div>
+      </div>
+    </div>
+
+    <!-- Modal edit -->
+    <div class="modal fade" id="editBasis" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
+      <div class="modal-dialog">
+        <div class="modal-content">
+          <div class="modal-header">
+            <h1 class="modal-title fs-5" id="exampleModalLabel">Edit Basis Pengetahuan</h1>
+            <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+          </div>
+          <form method="post" action="fungsi_proses/proses_edit_pengetahuan.php">
+              <div class="modal-body">
+                  <input type="text" class="form-control" name="id" id="id" hidden>
+                  <input type="text" class="form-control" name="penyakit" id="penyakit" hidden>
+                  <div class="mb-3" hidden="hidden">
+                    <label for="kode" class="form-label">Kode Rule</label>
+                    <input type="text" class="form-control" id="kode" readonly="readonly" name="kode">
+                  </div>
+                  <div class="mb-3">
+                    <label for="gejala" class="form-label">Gejala</label>
+                    <select class="form-select" aria-label="Default select example" name="gejala" id="gejala" required>
+                      <?php foreach ($row as $data) : ?>
+                        <option value="<?= $data['id_gejala']; ?>"><?= $data['kode_gejala']; ?> - <?= $data['gejala']; ?></option>
+                      <?php endforeach; ?>
+                    </select>
+                  </div>
+                  <div class="mb-3">
+                    <label for="pertanyaan" class="form-label">Pertanyaan</label>
+                    <textarea class="form-control" id="pertanyaan" rows="3" name="pertanyaan" required></textarea>
                   </div>
               </div>
               <div class="modal-footer">

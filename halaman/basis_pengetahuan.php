@@ -15,9 +15,6 @@
     <ol class="breadcrumb mb-4">
         <li class="breadcrumb-item active">Basis Pengetahuan</li>
     </ol>
-    <div class="jenis-penyakit mb-3">
-        
-    </div>
     
     <?php foreach ($row as $data) : ?>
         <div class="accordion accordion-flush" id="accordionFlushExample">
@@ -29,11 +26,12 @@
             </h2>
             <div id="flush-collapseOne<?= $data['kode_penyakit']; ?>" class="accordion-collapse collapse" data-bs-parent="#accordionFlushExample">
               <div class="accordion-body">
-                <a href="index.php?halaman=tambah_basis&penyakit=<?= $data['nama_penyakit']; ?>&id_penyakit=<?= $data['id_penyakit']; ?>" class="btn btn-primary rounded-0">Tambah Rule Pertanyaan</a>
-                <a href="" class="btn btn-primary rounded-0">Lihat Pengetahuan</a>
+                <a href="index.php?halaman=tambah_basis&penyakit=<?= $data['nama_penyakit']; ?>
+                &id_penyakit=<?= $data['id_penyakit']; ?>" class="btn btn-primary rounded-0">Tambah Rule Pertanyaan</a>
               </div>
             </div>
           </div>
         </div>   
     <?php endforeach; ?>
+
 </div>
