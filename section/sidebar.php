@@ -13,12 +13,7 @@
                     <a class="nav-link" href="index.php?halaman=data_gejala">Data Gejala</a>
                     <a class="nav-link" href="index.php?halaman=pengetahuan">Basis Pengetahuan</a>
                 </nav>
-                
             </div>
         </div>
-        <!-- <div class="sb-sidenav-footer">
-            <div class="small">Logged in as:</div>
-            Start Bootstrap
-        </div> -->
     </nav>
 </div>

@@ -16,7 +16,7 @@
   <div class="fixed-top">
     <nav class="navbar navbar-expand-lg bg-body-tertiary">
       <div class="container">
-        <a class="navbar-brand" href="#">Sistem Pakar</a>
+        <a class="navbar-brand" href="#">Sistem Pakar Penyakit Seksual</a>
         <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
           <span class="navbar-toggler-icon"></span>
         </button>
@@ -25,9 +25,6 @@
             <li class="nav-item">
               <a class="nav-link active" aria-current="page" href="home.php?halaman=beranda">Home</a>
             </li>
-           <!--  <li class="nav-item">
-              <a class="nav-link" href="home.php?halaman=gejala">Data Gejala</a>
-            </li> -->
             <li class="nav-item">
               <a class="nav-link" href="home.php?halaman=penyakit">Data Penyakit</a>
             </li>

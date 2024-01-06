@@ -33,16 +33,6 @@
                 </div>
             </div>
 
-            <!-- <div class="login">
-                <form method="post">
-                <label for="name" class="text-black">Username</label><br>
-                <input type="text" name="name" id="name" placeholder="Silahkan Masukan Username">
-                <br>
-                <label for="pass">Password</label><br>
-                <input type="password" name="pass" id="pass" placeholder="Silahkan Masukan Password">
-                <button class="button  mt-5"type="submit" name="submit">Submit</button>
-            </div> -->
-
         </div>
     </div>
 </div>
@@ -72,7 +62,7 @@
                 alert("Login berhasil. Selamat datang, ' . $username . '!"); 
                 window.location.href = "dashboard/index.php";
             </script>';
-            // header("location: ../index.php"); 
+           
         } else {
             '<script>
                 alert("Username atau password salah!"); 
