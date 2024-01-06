@@ -7,6 +7,6 @@
 	$sql = "INSERT INTO data_penyakit VALUES ('', '$kode', '$penyakit')";
 	mysqli_query($koneksi, $sql);
 
-	header('Location: ../index.php?halaman=data_penyakit');
+	header('Location: ../dashboard/index.php?halaman=data_penyakit');
 
 ?>

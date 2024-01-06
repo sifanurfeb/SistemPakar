@@ -31,7 +31,7 @@
 
           $query = mysqli_query($koneksi, "INSERT INTO data_hasil VALUES ('', '$namaPenyakit', '$faktaGejala[$j]', '$kondisi')");
           echo "<script>
-            window.location.assign('../Home/home.php?halaman=diagnosa');  
+            window.location.assign('../home.php?halaman=diagnosa');  
           </script>";
         } 
         // else {

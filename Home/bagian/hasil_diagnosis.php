@@ -48,21 +48,19 @@
               <table class="table mb-4">
                 <thead>
                   <tr>
-                    <th scope="col">No</th>
                     <th scope="col">Gejala</th>
                     <th scope="col">Kode Gejala</th>
+                    <th scope="col">Status Gejala</th>
                   </tr>
                 </thead>
                 <tbody>
-                  <?php
-                    $no = 0; 
+                  <?php 
                     while ($diag = mysqli_fetch_assoc($hasil)) : 
-                    $no++;
                   ?>
                     <tr>
-                      <td><?= $no; ?></td>
                       <td><?= $diag['gejala']; ?></td>
                       <td><?= $diag['kode_gejala']; ?></td>
+                      <td><?= $diag['kondisi']; ?></td>
                     </tr>
                   <?php endwhile; ?>
                 </tbody>

@@ -8,6 +8,6 @@
 	$sql = "INSERT INTO data_gejala VALUES ('', '$kode', '$gejala', '$probab')";
 	mysqli_query($koneksi, $sql);
 
-	header('Location: ../index.php?halaman=data_gejala');
+	header('Location: ../dashboard/index.php?halaman=data_gejala');
 
 ?>

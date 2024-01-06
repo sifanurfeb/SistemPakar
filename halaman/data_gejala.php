@@ -1,5 +1,5 @@
 <?php  
-    require 'config/koneksi.php';
+    require '../config/koneksi.php';
 
     $data = "SELECT * FROM data_gejala";
     $hasil = mysqli_query($koneksi, $data);
@@ -56,7 +56,7 @@
                                 data-gejala="<?= $gejala['gejala']; ?>"
                                 data-probab="<?= $gejala['probabilitas']; ?>"
                                 >Edit</button>
-                                <a href="fungsi_proses/proses_hapus_gejala.php?id_gejala=<?= $gejala['id_gejala']; ?>" class="btn btn-primary rounded-0 btn-sm" onclick="return confirm('Ingin menghapusnya?');">Hapus</a>
+                                <a href="../fungsi_proses/proses_hapus_gejala.php?id_gejala=<?= $gejala['id_gejala']; ?>" class="btn btn-primary rounded-0 btn-sm" onclick="return confirm('Ingin menghapusnya?');">Hapus</a>
                             </td>
                         </tr>
                     <?php endwhile;  ?>
@@ -73,7 +73,7 @@
             <h1 class="modal-title fs-5" id="exampleModalLabel">Tambah Gejala</h1>
             <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
           </div>
-          <form method="post" action="fungsi_proses/proses_tambah_gejala.php">
+          <form method="post" action="../fungsi_proses/proses_tambah_gejala.php">
               <div class="modal-body">
                   <div class="mb-3">
                     <label for="exampleInputEmail1" class="form-label">Kode Gejala</label>
@@ -105,7 +105,7 @@
             <h1 class="modal-title fs-5" id="exampleModalLabel">Edit Gejala</h1>
             <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
           </div>
-          <form method="post" action="fungsi_proses/proses_edit_gejala.php">
+          <form method="post" action="../fungsi_proses/proses_edit_gejala.php">
               <div class="modal-body">
                   <input type="text" class="form-control" id="id" name="id" hidden>
                   <div class="mb-3">

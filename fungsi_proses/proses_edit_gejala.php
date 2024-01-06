@@ -9,6 +9,6 @@
 	$sql = "UPDATE data_gejala SET kode_gejala = '$kode', gejala = '$gejala', probabilitas = '$probab' WHERE id_gejala = '$id'";
 	mysqli_query($koneksi, $sql);
 
-	header('Location: ../index.php?halaman=data_gejala');
+	header('Location: ../dashboard/index.php?halaman=data_gejala');
 
 ?>

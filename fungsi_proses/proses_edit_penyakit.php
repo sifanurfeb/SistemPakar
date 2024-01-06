@@ -8,6 +8,6 @@
 	$sql = "UPDATE data_penyakit SET kode_penyakit = '$kode', nama_penyakit = '$penyakit' WHERE id_penyakit = '$id'";
 	mysqli_query($koneksi, $sql);
 
-	header('Location: ../index.php?halaman=data_penyakit');
+	header('Location: ../dashboard/index.php?halaman=data_penyakit');
 
 ?>

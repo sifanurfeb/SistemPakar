@@ -1,5 +1,5 @@
 <?php  
-    require 'config/koneksi.php';
+    require '../config/koneksi.php';
 
     $data = "SELECT * FROM data_penyakit";
     $hasil = mysqli_query($koneksi, $data);
@@ -52,7 +52,7 @@
                                 data-id="<?= $penyakit['id_penyakit']; ?>"
                                 data-kode="<?= $penyakit['kode_penyakit']; ?>"
                                 data-penyakit="<?= $penyakit['nama_penyakit']; ?>">Edit</button>
-                                <a href="fungsi_proses/proses_hapus_penyakit.php?id_penyakit=<?= $penyakit['id_penyakit']; ?>" class="btn btn-primary rounded-0 btn-sm" onclick="return confirm('Ingin menghapusnya?');">Hapus</a>
+                                <a href="../fungsi_proses/proses_hapus_penyakit.php?id_penyakit=<?= $penyakit['id_penyakit']; ?>" class="btn btn-primary rounded-0 btn-sm" onclick="return confirm('Ingin menghapusnya?');">Hapus</a>
                             </td>
                         </tr>
                     <?php endwhile;  ?>
@@ -69,7 +69,7 @@
             <h1 class="modal-title fs-5" id="exampleModalLabel">Tambah Data Penyakit</h1>
             <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
           </div>
-          <form method="post" action="fungsi_proses/proses_tambah_penyakit.php">
+          <form method="post" action="../fungsi_proses/proses_tambah_penyakit.php">
               <div class="modal-body">
                   <div class="mb-3">
                     <label for="exampleInputEmail1" class="form-label">Kode Penyakit</label>
@@ -97,7 +97,7 @@
             <h1 class="modal-title fs-5" id="exampleModalLabel">Edit Data Penyakit</h1>
             <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
           </div>
-          <form method="post" action="fungsi_proses/proses_edit_penyakit.php">
+          <form method="post" action="../fungsi_proses/proses_edit_penyakit.php">
               <div class="modal-body">
                   <input type="text" class="form-control" id="id" name="id" hidden>
                   <div class="mb-3">

@@ -40,7 +40,7 @@
 
     <!-- tabel pilihan gejala -->
     <?php if (isset($_POST['pilih'])) : ?>
-      <form method="post" action="../fungsi_proses/proses_diagnosis.php">
+      <form method="post" action="fungsi_proses/proses_diagnosis.php">
         <div class="row justify-content-center" id="tabel_diagnosis">
           <div class="col">
             <table class="table bg-transparent mt-5">

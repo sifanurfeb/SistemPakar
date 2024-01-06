@@ -9,6 +9,6 @@
 	$sql = "INSERT INTO data_rule VALUES ('', '$kode', '$penyakit', '$gejala', '$pertanyaan')";
 	mysqli_query($koneksi, $sql);
 	
-	header('Location: ../index.php?halaman=pengetahuan');
+	header('Location: ../dashboard/index.php?halaman=pengetahuan');
 
 ?>

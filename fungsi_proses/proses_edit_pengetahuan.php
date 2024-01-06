@@ -12,6 +12,6 @@
 	
 	mysqli_query($koneksi, $sql);
 
-	header('Location: ../index.php?halaman=pengetahuan');
+	header('Location: ../dashboard/index.php?halaman=pengetahuan');
 
 ?>

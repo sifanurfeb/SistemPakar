@@ -1,5 +1,5 @@
 <?php  
-    require 'config/koneksi.php';
+    require '../config/koneksi.php';
 
     $data = "SELECT * FROM data_penyakit";
     $hasil = mysqli_query($koneksi, $data);

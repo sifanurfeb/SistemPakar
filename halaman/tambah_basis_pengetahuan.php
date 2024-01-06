@@ -1,5 +1,5 @@
 <?php  
-    require 'config/koneksi.php';
+    require '../config/koneksi.php';
 
     $jenispenyakit = $_GET['penyakit'];
     $idpenyakit = $_GET['id_penyakit'];
@@ -77,7 +77,7 @@
                                 data-gejala="<?= $data['id_gejala']; ?>"
                                 data-pertanyaan="<?= $data['pertanyaan']; ?>"
                                 >Edit</button>
-                                <a href="fungsi_proses/proses_hapus_pengetahuan.php?id_rule=<?= $data['id_rule']; ?>" class="btn btn-primary rounded-0 btn-sm" onclick="return confirm('Ingin menghapusnya?');">Hapus</a>
+                                <a href="../fungsi_proses/proses_hapus_pengetahuan.php?id_rule=<?= $data['id_rule']; ?>" class="btn btn-primary rounded-0 btn-sm" onclick="return confirm('Ingin menghapusnya?');">Hapus</a>
                             </td>
                         </tr>
                     <?php endforeach; ?>
@@ -94,7 +94,7 @@
             <h1 class="modal-title fs-5" id="exampleModalLabel">Tambah Basis Pengetahuan</h1>
             <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
           </div>
-          <form method="post" action="fungsi_proses/proses_tambah_pengetahuan.php">
+          <form method="post" action="../fungsi_proses/proses_tambah_pengetahuan.php">
               <div class="modal-body">
                   <input type="text" class="form-control" name="penyakit" value="<?= $idpenyakit; ?>" hidden>
                   <div class="mb-3" hidden="hidden">
@@ -132,7 +132,7 @@
             <h1 class="modal-title fs-5" id="exampleModalLabel">Edit Basis Pengetahuan</h1>
             <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
           </div>
-          <form method="post" action="fungsi_proses/proses_edit_pengetahuan.php">
+          <form method="post" action="../fungsi_proses/proses_edit_pengetahuan.php">
               <div class="modal-body">
                   <input type="text" class="form-control" name="id" id="id" hidden>
                   <input type="text" class="form-control" name="penyakit" id="penyakit" hidden>

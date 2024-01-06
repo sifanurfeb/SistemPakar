@@ -1,5 +1,5 @@
 <?php  
-    require 'config/koneksi.php';
+    require '../config/koneksi.php';
 
     $dataPenyakit = mysqli_query($koneksi, "SELECT COUNT(*) AS data FROM data_penyakit");
     $dataGejala = mysqli_query($koneksi, "SELECT COUNT(*) AS data FROM data_gejala");;
