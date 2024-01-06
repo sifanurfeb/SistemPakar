@@ -33,7 +33,7 @@
 
 <!-- php -->
 <?php 
-require '../config/koneksi.php';
+// require '../config/koneksi.php';
 
 session_start();
 if (isset($_POST['submit'])) {
@@ -41,14 +41,14 @@ if (isset($_POST['submit'])) {
 
     $username = mysqli_real_escape_string($conn, $_POST['username']);
     $password = mysqli_real_escape_string($conn, $_POST['password']);
-    $hashed_password = md5($password); // Hindari penggunaan MD5 di produksi, gunakan hashing yang lebih aman seperti bcrypt.
+    $hashed_password = md5($password); 
 
     $query = "SELECT * FROM data_admin WHERE username='$username' AND password='$hashed_password'";
     $result = $conn->query($query);
 
     if ($result->num_rows > 0) {
         $_SESSION['username'] = $username;
-        header("Location: ../halaman/dashboard.php"); // Ganti welcome.php dengan halaman selamat datang atau halaman beranda setelah login.
+        header("Location: ../halaman/dashboard.php"); 
     } else {
         $error = "Username atau password salah";
     }
