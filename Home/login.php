@@ -48,7 +48,7 @@ if (isset($_POST['submit'])) {
 
     if ($result->num_rows > 0) {
         $_SESSION['username'] = $username;
-        header("Location: ./index.php"); 
+        header("Location: ../index.php"); 
     } else {
         $error = "Username atau password salah";
     }
