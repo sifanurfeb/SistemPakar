@@ -48,7 +48,7 @@ if (isset($_POST['submit'])) {
 
     if ($result->num_rows > 0) {
         $_SESSION['username'] = $username;
-        header("Location: home.php"); // Ganti welcome.php dengan halaman selamat datang atau halaman beranda setelah login.
+        header("Location: ../halaman/dashboard.php"); // Ganti welcome.php dengan halaman selamat datang atau halaman beranda setelah login.
     } else {
         $error = "Username atau password salah";
     }
