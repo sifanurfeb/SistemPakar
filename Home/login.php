@@ -15,16 +15,45 @@
             <h1 class="text-uppercase fw-semibold mb-3">Selamat Datang!</h1>
             <h3 class="text-uppercase fw-bold">Sistem Pakar PENYAKIT MENULAR SEKSUAL PADA MANUSIA</h3>
             <div class="login">
+                <form action="home.php" method="post">
                 <label for="name" class="text-black">Username</label><br>
                 <input type="text" name="name" id="name" placeholder="Silahkan Masukan Username">
                 <br>
                 <label for="pass">Password</label><br>
                 <input type="password" name="pass" id="pass" placeholder="Silahkan Masukan Password">
-                <button class="btn btn-primary mt-5"type="submit">Submit</button>
+                <button class="button  mt-5"type="submit" name="submit">Submit</button>
             </div>
         </div>
     </div>
 </div>
+</form>
 <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/js/bootstrap.bundle.min.js" integrity="sha384-C6RzsynM9kWDrMNeT87bh95OGNyZPhcTNXj1NW7RuBCsyN/o0jlpcV8Qyq46cDfL" crossorigin="anonymous"></script>
 </body>
 </html>
+
+<!-- php -->
+<?php 
+// require '../config/koneksi.php';
+
+session_start();
+if (isset($_POST['submit'])) {
+    require_once '../config/koneksi.php';
+
+    $username = mysqli_real_escape_string($conn, $_POST['username']);
+    $password = mysqli_real_escape_string($conn, $_POST['password']);
+    $hashed_password = md5($password); 
+
+    $query = "SELECT * FROM data_admin WHERE username='$username' AND password='$hashed_password'";
+    $result = $conn->query($query);
+
+    if ($result->num_rows > 0) {
+        $_SESSION['username'] = $username;
+        echo '<script>alert("Login berhasil. Selamat datang, ' . $username . '!"); window.location.href = "dashboard.php";</script>';
+        // header("location: ../index.php"); 
+    } else {
+        $error = "Username atau password salah";
+    }
+}
+
+
+?>
