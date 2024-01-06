@@ -48,7 +48,8 @@ if (isset($_POST['submit'])) {
 
     if ($result->num_rows > 0) {
         $_SESSION['username'] = $username;
-        header("location: ../index.php"); 
+        echo '<script>alert("Login berhasil. Selamat datang, ' . $username . '!"); window.location.href = "dashboard.php";</script>';
+        // header("location: ../index.php"); 
     } else {
         $error = "Username atau password salah";
     }
