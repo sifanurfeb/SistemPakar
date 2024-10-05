@@ -3,7 +3,7 @@
 -- https://www.phpmyadmin.net/
 --
 -- Host: 127.0.0.1
--- Waktu pembuatan: 06 Jan 2024 pada 05.49
+-- Waktu pembuatan: 06 Jan 2024 pada 14.10
 -- Versi server: 10.4.17-MariaDB
 -- Versi PHP: 7.4.13
 
@@ -33,6 +33,13 @@ CREATE TABLE `data_admin` (
   `username` varchar(100) NOT NULL,
   `password` varchar(255) NOT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4;
+
+--
+-- Dumping data untuk tabel `data_admin`
+--
+
+INSERT INTO `data_admin` (`id`, `nama_admin`, `username`, `password`) VALUES
+(1, 'Admin', 'admin', '21232f297a57a5a743894a0e4a801fc3');
 
 -- --------------------------------------------------------
 
@@ -211,7 +218,7 @@ ALTER TABLE `data_rule`
 -- AUTO_INCREMENT untuk tabel `data_admin`
 --
 ALTER TABLE `data_admin`
-  MODIFY `id` int(20) NOT NULL AUTO_INCREMENT;
+  MODIFY `id` int(20) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=2;
 
 --
 -- AUTO_INCREMENT untuk tabel `data_gejala`
@@ -229,7 +236,7 @@ ALTER TABLE `data_hasil`
 -- AUTO_INCREMENT untuk tabel `data_penyakit`
 --
 ALTER TABLE `data_penyakit`
-  MODIFY `id_penyakit` int(20) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=8;
+  MODIFY `id_penyakit` int(20) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=10;
 
 --
 -- AUTO_INCREMENT untuk tabel `data_rule`

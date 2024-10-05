@@ -26,13 +26,14 @@
     </div>
     <div class="card mb-4">
         <div class="card-body">
+          <div class="table-responsive">
             <table id="datatablesSimple">
                 <thead>
                     <tr>
-                        <th>No</th>
-                        <th>Kode Penyakit</th>
-                        <th>Nama Penyakit</th>
-                        <th>Opsi</th>
+                        <th nowrap="nowrap">No</th>
+                        <th nowrap="nowrap">Kode Penyakit</th>
+                        <th nowrap="nowrap">Nama Penyakit</th>
+                        <th nowrap="nowrap">Opsi</th>
                     </tr>
                 </thead>
                 <tbody>
@@ -45,7 +46,7 @@
                             <th><?= $no; ?></th>
                             <td><?= $penyakit['kode_penyakit']; ?></td>
                             <td><?= $penyakit['nama_penyakit']; ?></td>
-                            <td>
+                            <td nowrap="nowrap">
                                 <button class="btn btn-primary rounded-0 btn-sm" 
                                 data-bs-toggle="modal" 
                                 data-bs-target="#editModalPenyakit"
@@ -58,6 +59,7 @@
                     <?php endwhile;  ?>
                 </tbody>
             </table>
+          </div>
         </div>
     </div>
 
@@ -77,7 +79,8 @@
                   </div>
                   <div class="mb-3">
                     <label for="exampleInputPassword1" class="form-label">Nama Penyakit</label>
-                    <input type="text=" class="form-control" id="exampleInputPassword1" name="nama_penyakit" required>
+                    <input type="text=" class="form-control" id="exampleInputPassword1" name="nama_penyakit"
+                    placeholder="Nama penyakit" required>
                   </div>
               </div>
               <div class="modal-footer">

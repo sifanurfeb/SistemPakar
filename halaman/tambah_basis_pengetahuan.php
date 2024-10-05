@@ -46,6 +46,7 @@
 
     <div class="card mb-4">
         <div class="card-body">
+          <div class="table-responsive">
             <table id="datatablesSimple">
                 <thead>
                     <tr>
@@ -83,6 +84,7 @@
                     <?php endforeach; ?>
                 </tbody>
             </table>
+          </div>
         </div>
     </div>
 
@@ -112,7 +114,7 @@
                   </div>
                   <div class="mb-3">
                     <label for="exampleInputPassword1" class="form-label">Pertanyaan</label>
-                    <textarea class="form-control" id="exampleFormControlTextarea1" rows="3" name="pertanyaan" required></textarea>
+                    <textarea class="form-control" id="exampleFormControlTextarea1" rows="3" name="pertanyaan" placeholder="Masukkan pertanyaan?" required></textarea>
                   </div>
               </div>
               <div class="modal-footer">

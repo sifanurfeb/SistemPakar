@@ -9,7 +9,7 @@
 ?>
 
 <div class="container-fluid px-4">
-    <h1 class="mt-4">Dashboard</h1>
+    <h2 class="mt-3">Dashboard</h2>
     <ol class="breadcrumb mb-4">
         <li class="breadcrumb-item active">Dashboard</li>
     </ol>

@@ -33,9 +33,8 @@
 
 ?>
 
-<section class="penyakit align-items-center justify-content-center">
+<section class="diagnosa align-items-center justify-content-center">
   <div class="container">
-
     <?php  
       if ($row['data'] > 0) {
     ?>
@@ -44,7 +43,7 @@
           <div class="card">
             <div class="card-body">
               <h5 class="card-title">Hasil Diagnosis</h5>
-              <h6 class="card-subtitle mb-2 text-body-secondary">Berdasarkan penyakit atau goal yang anda pilih terdapat beberapa gejala yang ada pada penyakit tersebut, yaitu sebagai berikut :</h6>
+              <p class="desc-diagnosis mb-3 text-body-secondary text-justify">Berdasarkan penyakit atau goal yang anda pilih terdapat beberapa gejala yang ada pada penyakit tersebut, yaitu sebagai berikut:</p>
               <table class="table mb-4">
                 <thead>
                   <tr>
@@ -66,7 +65,7 @@
                 </tbody>
               </table>
 
-              <p class="text-body-secondary">Dari hasil beberapa gejala yang ada, kemungkinan atau kesesuaian pada penyakit tersebut adalah sekitar <b><?= $probab[0]['total']; ?>%</b></p>
+              <p class="desc-diagnosis text-body-secondary text-justify">Dari hasil beberapa gejala yang ada, kemungkinan atau kesesuaian pada penyakit tersebut adalah sekitar <b><?= $probab[0]['total']; ?>%</b></p>
 
               <form method="post">
                 <div class="d-flex justify-content-center mt-4 mb-3">
@@ -87,12 +86,11 @@
         <div class="col">
           <div class="card">
             <div class="card-body">
-              <h6 class="card-title">Belum ada data hasil diagnosa</h6>
+              <h6 class="card-title mb-0">Belum ada data hasil diagnosa</h6>
             </div>
           </div>
         </div>
       </div>
     
     <?php } ?>
-
 </section>  

@@ -26,14 +26,15 @@
     </div>
     <div class="card mb-4">
         <div class="card-body">
+          <div class="table-responsive">
             <table id="datatablesSimple">
                 <thead>
                     <tr>
-                        <th>No</th>
-                        <th>Kode Gejala</th>
-                        <th>Gejala</th>
-                        <th>Probabilitas</th>
-                        <th>Opsi</th>
+                      <th nowrap="nowrap">No</th>
+                      <th nowrap="nowrap">Kode Gejala</th>
+                      <th nowrap="nowrap">Gejala</th>
+                      <th nowrap="nowrap">Probabilitas</th>
+                      <th nowrap="nowrap">Opsi</th>
                     </tr>
                 </thead>
                 <tbody>
@@ -45,9 +46,9 @@
                         <tr>
                             <th><?= $no; ?></th>
                             <td><?= $gejala['kode_gejala']; ?></td>
-                            <td><?= $gejala['gejala']; ?></td>
+                            <td nowrap="nowrap"><?= $gejala['gejala']; ?></td>
                             <td><?= $gejala['probabilitas']; ?></td>
-                            <td>
+                            <td nowrap="nowrap">
                                 <button class="btn btn-primary rounded-0 btn-sm" 
                                 data-bs-toggle="modal" 
                                 data-bs-target="#editModalGejala"
@@ -62,6 +63,7 @@
                     <?php endwhile;  ?>
                 </tbody>
             </table>
+          </div>
         </div>
     </div>
 
@@ -81,11 +83,11 @@
                   </div>
                   <div class="mb-3">
                     <label for="exampleInputPassword1" class="form-label">Gejala</label>
-                    <input type="text=" class="form-control" id="exampleInputPassword1" name="nama_gejala" required>
+                    <input type="text=" class="form-control" id="exampleInputPassword1" name="nama_gejala" placeholder="Nama gejala" required>
                   </div>
                   <div class="mb-3">
                     <label for="exampleInputPassword1" class="form-label">Nilai Probabilitas</label>
-                    <input type="text=" class="form-control" id="exampleInputPassword1" name="probabilitas" required>
+                    <input type="text=" class="form-control" id="exampleInputPassword1" name="probabilitas" placeholder="Nilai probabilitas" required>
                   </div>
               </div>
               <div class="modal-footer">

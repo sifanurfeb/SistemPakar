@@ -7,35 +7,39 @@
       $row[] = $penyakit;
   }
 
-  $penyakit = $_POST['penyakit'];
+  if (isset($_POST['penyakit'])) {
+    $penyakit = $_POST['penyakit'];
 
-  $sql = "SELECT data_rule.id_rule, data_rule.kode_rule, data_penyakit.id_penyakit, data_penyakit.kode_penyakit, data_penyakit.
-  nama_penyakit, data_gejala.id_gejala, data_gejala.kode_gejala, data_gejala.gejala, data_rule.pertanyaan FROM data_rule 
-  INNER JOIN data_penyakit ON data_rule.id_penyakit = data_penyakit.id_penyakit 
-  INNER JOIN data_gejala ON data_rule.id_gejala = data_gejala.id_gejala 
-  WHERE nama_penyakit = '$penyakit'";
+    $sql = "SELECT data_rule.id_rule, data_rule.kode_rule, data_penyakit.id_penyakit, data_penyakit.kode_penyakit, data_penyakit.
+    nama_penyakit, data_gejala.id_gejala, data_gejala.kode_gejala, data_gejala.gejala, data_rule.pertanyaan FROM data_rule 
+    INNER JOIN data_penyakit ON data_rule.id_penyakit = data_penyakit.id_penyakit 
+    INNER JOIN data_gejala ON data_rule.id_gejala = data_gejala.id_gejala 
+    WHERE nama_penyakit = '$penyakit'";
+    
+    $tampil = mysqli_query($koneksi, $sql);
+  }
   
-  $tampil = mysqli_query($koneksi, $sql);
-
 ?>
 
 <!-- header  -->
 <section class="penyakit align-items-center justify-content-center">
   <div class="container">
-    
+    <h3 class="text-center">Data Penyakit</h3>
+
     <!-- select pilih penyakit -->
     <form method="post">
-      <h3 class="text-center">Data Penyakit</h3>
-        <label for="sick" class="mb-2 mt-3">Data penyakit</label>
-        <select class=" select form-select" aria-label="Default select example" name="penyakit" id="nama_penyakit" required="required">
-          <option selected value="">Silahkan Pilih</option>
-          <?php foreach ($row as $penyakit) : ?>
-            <option value="<?= $penyakit['nama_penyakit']; ?>" data-penyakit="<?= $penyakit['nama_penyakit']; ?>"><?= $penyakit['kode_penyakit']; ?> - <?= $penyakit['nama_penyakit']; ?></option>
-          <?php endforeach; ?>
-        </select>
-        <div class="submit d-flex justify-content-center">
-          <button class="btn" type="submit" name="pilih">Submit</button>
-        </div>
+      <label for="sick" class="mb-2 mt-4">Pilih Data Penyakit</label>
+      <select class="select form-select" aria-label="Default select example" name="penyakit" id="nama_penyakit" required="required">
+        <option value="" selected>-- Silahkan Pilih --</option>
+        <?php foreach ($row as $penyakit) : ?>
+          <option value="<?= $penyakit['nama_penyakit']; ?>">
+            <?= $penyakit['kode_penyakit']; ?> - <?= $penyakit['nama_penyakit']; ?>    
+          </option>
+        <?php endforeach; ?>
+      </select>
+      <div class="submit d-flex justify-content-center">
+        <button class="btn" type="submit" name="pilih">Submit</button>
+      </div>
     </form>
 
     <!-- tabel pilihan gejala -->
@@ -73,6 +77,5 @@
         </div>
       </form>
     <?php endif; ?>
-    
   </div>
 </section>
